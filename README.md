@@ -82,6 +82,27 @@
 ---
 
 ## Publications
+- **Temperature-Compensated Multi-Level CMOS Modulators Operating from 10 K to 300 K for Cryogenic Interconnects**  
+  *Christopher Kniss, Abhishek Sharma, Ratanak Phon, Gregory Shimonov, Eran Socher, Pragya R. Shrestha, Karthick Ramu, Jason P. Campbell, Amin Pourvali Kakhki, Richard Al Hadi, Rod Kim*  
+  IEEE Journal of Microwaves (JMW), IEEE  
+  Affiliations: University of Massachusetts Amherst; National Institute of Standards and Technology (NIST); Indian Institute of Technology Jodhpur; Tel Aviv University; École de technologie supérieure, Montreal  
+  **Status:** Published — September 2025  
+
+  **Summary:**  
+  - Presents temperature-compensated cryogenic CMOS modulators operating from **10 K to 300 K** for cryogenic communications.  
+  - Addresses limitations of conventional metal-based coax cables (thermal load vs. frequency-dependent attenuation trade-off).  
+  - Motivated by demand for scalable cryogenic interconnects in **high-performance computing** and **quantum computing**.  
+  - Implemented a **current-steering 2-bit modulator** in 65 nm bulk CMOS:  
+    - Achieved **13 Gb/s** at 10 K with **15.4 mW** power under 1.2 V supply.  
+    - Energy efficiency: **1.18 pJ/b**.  
+  - Demonstrated **150 GHz transmitter** in 28 nm CMOS with same modulator scheme.  
+  - Established **contactless connections** between 10 K and 300 K systems, achieving **8 Gb/s**.  
+
+  **Keywords:** Contactless Connection, Cryogenic Interface, CMOS, Millimeter-Wave, Modulator, Multi-Level Signaling, Temperature Compensation  
+  **Funding Acknowledgments:** Supported by the Defense Advanced Research Projects Agency (DARPA) Grant D22AP00139.  
+
+---
+
 - **Ceramic Fiber Interconnects Beyond 1000° C Enabled by Automatic Gain Compensated Millimeter-Wave CMOS Transceivers**  
   *Abhishek Sharma, Christopher Kniss, Ratanak Phon, Rod Kim*  
   2025 IEEE International Symposium on Circuits and Systems (ISCAS), pp. 1–5  
@@ -97,6 +118,7 @@
   - Achieved a **data rate of 5 Gb/s** at extreme operating conditions.  
 
   **Applications:** Aerospace, avionics, geothermal systems, and other extreme environment electronics.  
+  **Funding Acknowledgments:** N/A  
 
 ---
 
