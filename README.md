@@ -44,12 +44,12 @@
   **Status:** Completed — May 2025  
 
 - **NIST SURF Program Intern**  
-  Gaithersburg Campus, Maryland — May 2025–Present  
+  Gaithersburg Campus, Maryland — May 2025–August 2025  
   - Developing PCBs in Altium Designer to be mounted in cryogenic chambers.  
   - Gaining experience with probing stations, VNAs, oscilloscopes, and signal generators.  
   - Enhancing lab skills for use in cryogenic and non-cryogenic environments.  
   - **Related Presentation:** NIST SURF Colloquium — July 2025  
-  **Status:** Ongoing — since May 2025  
+  **Status:** Completed — August 2025  
 
 ---
 
@@ -86,7 +86,7 @@
   *Christopher Kniss, Abhishek Sharma, Ratanak Phon, Gregory Shimonov, Eran Socher, Pragya R. Shrestha, Karthick Ramu, Jason P. Campbell, Amin Pourvali Kakhki, Richard Al Hadi, Rod Kim*  
   IEEE Journal of Microwaves (JMW), IEEE  
   Affiliations: University of Massachusetts Amherst; National Institute of Standards and Technology (NIST); Indian Institute of Technology Jodhpur; Tel Aviv University; École de technologie supérieure, Montreal  
-  **Status:** Published — September 2025  
+  **Status:** Published — October 2025  
 
   **Summary:**  
   - Presents temperature-compensated cryogenic CMOS modulators operating from **10 K to 300 K** for cryogenic communications.  
