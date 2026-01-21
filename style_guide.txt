@@ -1,43 +1,109 @@
-DOCUMENT SETUP:
-- Page margins: 0.75 inch on all sides
-- Font: Computer Modern (default LaTeX font) at 11pt
-- Single column layout
+# LATEX ACADEMIC CV STYLE GUIDE (IEEE STANDARD)
+# Target Audience: PhD Student / Researcher in Electrical & Computer Engineering
 
-HEADER SECTION:
-- Name: Centered, \LARGE\textbf{Name}
-- Contact line: Centered below name, separated by vertical bars (|)
-- Format: City, State | email@example.com | (123) 456-7890 | linkedin.com/in/username
+[GLOBAL_SETTINGS]
+Document_Class: article
+Paper_Size: Letter (8.5 x 11 inches)
+Font_Size: 11pt (Body), 10pt (Metadata/Footer)
+Font_Family:
+  - Main: Latin Modern Roman (lmodern) or Times New Roman (mathptmx)
+  - Sans: Latin Modern Sans (for headers if distinct contrast is desired)
+  - Monospace: Computer Modern Typewriter (for code/tech stacks)
+Line_Spacing: 1.15 to 1.2 (Single spacing with slight breathing room)
 
-SECTION HEADERS:
-- All caps, bold: \textbf{SECTION NAME}
-- Horizontal rule (\hrule) below each header
-- Small vertical space after rule (\vspace{0.5em})
+[GEOMETRY_&_LAYOUT]
+Package: geometry
+Margins:
+  - Top: 0.75 in
+  - Bottom: 0.75 in
+  - Left: 0.75 in
+  - Right: 0.75 in
+  - Binding_Offset: 0 in
+Orientation: Portrait
+Columns: Single column (Standard for Academic CVs to allow for full citation width)
 
-ENTRY FORMAT (Education, Experience, Publications, etc.):
-- Title/Position: Bold, INDENTED from left margin (use \hspace{1em} or \quad before title)
-- Institution/Company: Regular text, NOT indented (flush left)
-- Location and Date: Right-aligned using \hfill on the same line as the indented title
-- Details: Bullet points using itemize environment, flush left
-- Spacing: \vspace{0.5em} between entries
+[HEADER_SECTION]
+Alignment: Center
+Name_Style: \Huge \textbf{Name} (Small Caps optional)
+Contact_Info_Style: \small
+Separator: " | " or " $\cdot$ "
+Elements_Order:
+  1. Name
+  2. Location (City, State)
+  3. Email (Hyperlinked, remove "mailto:" prefix in display)
+  4. Phone Number
+  5. Website/Portfolio URL (Hyperlinked)
+  6. LinkedIn/Google Scholar Profile (Hyperlinked)
 
-INDENTATION PATTERN (CRITICAL):
-- Section headers: Flush left with underline
-- Entry titles (degree, job title, publication title): INDENTED ~1em from left margin
-- Supporting text (institution name, author list, venue): Flush left (no indent)
-- Bullet points: Flush left with standard itemize indent
+[SECTION_FORMATTING]
+Package: titlesec
+Section_Style:
+  - Font: \Large \bfseries \sffamily (or Serif if preferring classic look)
+  - Uppercase: YES
+  - Underline: Horizontal rule below section title (0.5pt thickness)
+  - Spacing_After: 0.5em
+Subsection_Style:
+  - Font: \large \bfseries
+  - Spacing_Before: 0.3em
+  - Spacing_After: 0.1em
 
-SKILLS/COURSEWORK SECTIONS:
-- Can use comma-separated lists or columns
-- Bold category labels if grouping (e.g., \textbf{Programming:} Python, C++)
+[CONTENT_HIERARCHY]
+# Prioritize academic achievements for a PhD/Research track.
+Order:
+  1. Education (Include Thesis title/Advisor if applicable)
+  2. Research Interests (Keywords or short list)
+  3. Publications & Conferences (See BIBLIOGRAPHY section)
+  4. Research Experience (Detailed technical breakdown)
+  5. Teaching Experience (TA roles, mentorship)
+  6. Industry/Work Experience
+  7. Skills (Technical, Software, Lab Equipment)
+  8. Awards & Honors
+  9. Professional Memberships (IEEE, Tau Beta Pi, etc.)
 
-PACKAGES TO USE:
-- geometry (for margins)
-- enumitem (for customized lists)
-- titlesec (for section formatting)
-- hyperref (for clickable links)
-- fontenc, inputenc (for proper encoding)
+[ENTRY_STRUCTURE]
+Format_Rule: Tabular or List-based
+Header_Line_1:
+  - Left: \textbf{Role/Degree}
+  - Right: \textbf{Date Range} (e.g., "May 2024 -- Present")
+Header_Line_2:
+  - Left: \textit{Institution/Company, Location}
+  - Right: (Optional: Advisor Name or GPA if student)
+Body_Content:
+  - Use 'itemize' environment.
+  - Bullet style: \bullet or \cdot (small, unobtrusive).
+  - Item spacing: \itemsep0em (Tight vertical spacing).
+  - Verbs: Use strong action verbs (Designed, Simulated, Characterized).
+  - Numbers: Use numerals for metrics (e.g., "100 MHz", "10 K").
 
-ADDITIONAL NOTES:
-- Keep it to 1-2 pages
-- Use consistent date formatting (e.g., "May 2025" or "2025")
-- Ensure all special characters are escaped (%, &, $, #, _)
+[BIBLIOGRAPHY_&_CITATIONS]
+Backend: BibLaTeX
+Style: IEEE (numeric or label-based, sorting=ydnt for reverse chronological)
+Package_Settings:
+  - \usepackage[style=ieee, sorting=ydnt, backend=biber]{biblatex}
+Section_Title: "Publications" or "Selected Publications"
+Differentiation:
+  - Create separate refsections or keyword filters for "Journal Papers", "Conference Proceedings", and "Workshop Presentations".
+Highlighting:
+  - Bold the user's name in the author list (requires simple regex post-processing or BibLaTeX hashing macro).
+
+[TYPOGRAPHY_RULES]
+1. Dashes:
+   - Use en-dash (--) for date ranges (e.g., 2023--2024).
+   - Use em-dash (---) for breaks in thought, avoid in CVs generally.
+2. Acronyms:
+   - Define on first use unless standard (e.g., IEEE, FPGA, PCB).
+3. LaTeX Specials:
+   - Escape reserved characters: &, %, $, #, _, {, }, ~, ^.
+4. Math Mode:
+   - Use formatting for technical units: $100\text{ MHz}$, $1100^{\circ}\text{C}$.
+   - Use \text{} inside math mode for non-variable descriptions.
+
+[SKILLS_SECTION_FORMAT]
+Style: Inline lists separated by commas or bullets.
+Categories:
+  - \textbf{Languages:} C/C++, Python, MATLAB, Verilog/VHDL.
+  - \textbf{Software:} Altium Designer, Cadence Virtuoso, HFSS, ADS.
+  - \textbf{Lab:} VNAs, Oscilloscopes, Cryogenic Probing.
+
+[UNDEFINED_VARIABLES]
+If specific data is missing (e.g., exact dates), insert placeholder: \textbf{[TBD]}.
