@@ -1,109 +1,62 @@
-# LATEX ACADEMIC CV STYLE GUIDE (IEEE STANDARD)
-# Target Audience: PhD Student / Researcher in Electrical & Computer Engineering
+# LATEX GENERATION STYLE GUIDE
+# Goal: Academic CV (IEEE Style)
+# Font: Times New Roman
 
-[GLOBAL_SETTINGS]
-Document_Class: article
-Paper_Size: Letter (8.5 x 11 inches)
-Font_Size: 11pt (Body), 10pt (Metadata/Footer)
-Font_Family:
-  - Main: Latin Modern Roman (lmodern) or Times New Roman (mathptmx)
-  - Sans: Latin Modern Sans (for headers if distinct contrast is desired)
-  - Monospace: Computer Modern Typewriter (for code/tech stacks)
-Line_Spacing: 1.15 to 1.2 (Single spacing with slight breathing room)
+[DOCUMENT SETUP]
+- Document Class: \documentclass[11pt]{article}
+- Package: \usepackage{mathptmx} % Sets font to Times New Roman
+- Package: \usepackage[margin=0.75in]{geometry}
+- Package: \usepackage{enumitem} % For list customization
+- Package: \usepackage{titlesec} % For section formatting
+- Package: \usepackage{hyperref} % For links
+- Package: \usepackage{lastpage, fancyhdr} % Optional for page numbering
+- Layout: Single column
 
-[GEOMETRY_&_LAYOUT]
-Package: geometry
-Margins:
-  - Top: 0.75 in
-  - Bottom: 0.75 in
-  - Left: 0.75 in
-  - Right: 0.75 in
-  - Binding_Offset: 0 in
-Orientation: Portrait
-Columns: Single column (Standard for Academic CVs to allow for full citation width)
+[FONT SIZING & TYPOGRAPHY]
+- Base Font: 11pt (set in documentclass)
+- Title (Name): 16pt Bold -> Use \fontsize{16}{19}\selectfont \textbf{Name}
+- Section Headers: 12pt Bold -> Use \large \textbf{SECTION NAME}
+- Body Text: 11pt (Standard)
 
-[HEADER_SECTION]
-Alignment: Center
-Name_Style: \Huge \textbf{Name} (Small Caps optional)
-Contact_Info_Style: \small
-Separator: " | " or " $\cdot$ "
-Elements_Order:
-  1. Name
-  2. Location (City, State)
-  3. Email (Hyperlinked, remove "mailto:" prefix in display)
-  4. Phone Number
-  5. Website/Portfolio URL (Hyperlinked)
-  6. LinkedIn/Google Scholar Profile (Hyperlinked)
+[HEADER SECTION]
+- Alignment: Centered
+- Content:
+  1. Name (16pt, Bold)
+  2. Contact Line (11pt): City, State | email | phone | linkedin_url
+- Spacing: \vspace{0.5em} after contact info.
 
-[SECTION_FORMATTING]
-Package: titlesec
-Section_Style:
-  - Font: \Large \bfseries \sffamily (or Serif if preferring classic look)
-  - Uppercase: YES
-  - Underline: Horizontal rule below section title (0.5pt thickness)
-  - Spacing_After: 0.5em
-Subsection_Style:
-  - Font: \large \bfseries
-  - Spacing_Before: 0.3em
-  - Spacing_After: 0.1em
+[SECTION FORMATTING]
+- Command: \titleformat{\section}
+- Style: \large\bfseries\uppercase
+- Decoration: \titlerule (Horizontal rule below text)
+- Spacing: \titlespacing*{\section}{0pt}{12pt}{6pt} (Adjust for visual breathing room)
 
-[CONTENT_HIERARCHY]
-# Prioritize academic achievements for a PhD/Research track.
-Order:
-  1. Education (Include Thesis title/Advisor if applicable)
-  2. Research Interests (Keywords or short list)
-  3. Publications & Conferences (See BIBLIOGRAPHY section)
-  4. Research Experience (Detailed technical breakdown)
-  5. Teaching Experience (TA roles, mentorship)
-  6. Industry/Work Experience
-  7. Skills (Technical, Software, Lab Equipment)
-  8. Awards & Honors
-  9. Professional Memberships (IEEE, Tau Beta Pi, etc.)
+[ENTRY FORMAT]
+# Used for Education, Experience, Projects
+- Structure:
+  \noindent \textbf{Title/Role} \hfill \textbf{Date Range} \\
+  \textit{Institution/Company} \hfill \textit{Location (Optional)}
+- Details:
+  \begin{itemize}[leftmargin=*, noitemsep, topsep=0pt]
+    \item Detail 1
+    \item Detail 2
+  \end{itemize}
+- Spacing: \vspace{0.5em} between distinct entries.
 
-[ENTRY_STRUCTURE]
-Format_Rule: Tabular or List-based
-Header_Line_1:
-  - Left: \textbf{Role/Degree}
-  - Right: \textbf{Date Range} (e.g., "May 2024 -- Present")
-Header_Line_2:
-  - Left: \textit{Institution/Company, Location}
-  - Right: (Optional: Advisor Name or GPA if student)
-Body_Content:
-  - Use 'itemize' environment.
-  - Bullet style: \bullet or \cdot (small, unobtrusive).
-  - Item spacing: \itemsep0em (Tight vertical spacing).
-  - Verbs: Use strong action verbs (Designed, Simulated, Characterized).
-  - Numbers: Use numerals for metrics (e.g., "100 MHz", "10 K").
+[ACADEMIC/IEEE CONVENTIONS]
+- Dates: Use "May 2025" or "2023--Present" (use en-dash `--` for ranges).
+- Citations: If including a publication list, use standard IEEE format (e.g., [1] J. Doe, "Title," Journal...).
+- Tense: Past tense for past roles, Present tense for current roles.
 
-[BIBLIOGRAPHY_&_CITATIONS]
-Backend: BibLaTeX
-Style: IEEE (numeric or label-based, sorting=ydnt for reverse chronological)
-Package_Settings:
-  - \usepackage[style=ieee, sorting=ydnt, backend=biber]{biblatex}
-Section_Title: "Publications" or "Selected Publications"
-Differentiation:
-  - Create separate refsections or keyword filters for "Journal Papers", "Conference Proceedings", and "Workshop Presentations".
-Highlighting:
-  - Bold the user's name in the author list (requires simple regex post-processing or BibLaTeX hashing macro).
+[SKILLS SECTION]
+- Format: \noindent \textbf{Category Name:} Skill 1, Skill 2, Skill 3 \\
+- Grouping: Keep relevant keywords together (e.g., Software, Hardware, Languages).
 
-[TYPOGRAPHY_RULES]
-1. Dashes:
-   - Use en-dash (--) for date ranges (e.g., 2023--2024).
-   - Use em-dash (---) for breaks in thought, avoid in CVs generally.
-2. Acronyms:
-   - Define on first use unless standard (e.g., IEEE, FPGA, PCB).
-3. LaTeX Specials:
-   - Escape reserved characters: &, %, $, #, _, {, }, ~, ^.
-4. Math Mode:
-   - Use formatting for technical units: $100\text{ MHz}$, $1100^{\circ}\text{C}$.
-   - Use \text{} inside math mode for non-variable descriptions.
-
-[SKILLS_SECTION_FORMAT]
-Style: Inline lists separated by commas or bullets.
-Categories:
-  - \textbf{Languages:} C/C++, Python, MATLAB, Verilog/VHDL.
-  - \textbf{Software:} Altium Designer, Cadence Virtuoso, HFSS, ADS.
-  - \textbf{Lab:} VNAs, Oscilloscopes, Cryogenic Probing.
-
-[UNDEFINED_VARIABLES]
-If specific data is missing (e.g., exact dates), insert placeholder: \textbf{[TBD]}.
+[REQUIRED PACKAGES LIST]
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{mathptmx}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
