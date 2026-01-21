@@ -1,0 +1,43 @@
+DOCUMENT SETUP:
+- Page margins: 0.75 inch on all sides
+- Font: Computer Modern (default LaTeX font) at 11pt
+- Single column layout
+
+HEADER SECTION:
+- Name: Centered, \LARGE\textbf{Name}
+- Contact line: Centered below name, separated by vertical bars (|)
+- Format: City, State | email@example.com | (123) 456-7890 | linkedin.com/in/username
+
+SECTION HEADERS:
+- All caps, bold: \textbf{SECTION NAME}
+- Horizontal rule (\hrule) below each header
+- Small vertical space after rule (\vspace{0.5em})
+
+ENTRY FORMAT (Education, Experience, Publications, etc.):
+- Title/Position: Bold, INDENTED from left margin (use \hspace{1em} or \quad before title)
+- Institution/Company: Regular text, NOT indented (flush left)
+- Location and Date: Right-aligned using \hfill on the same line as the indented title
+- Details: Bullet points using itemize environment, flush left
+- Spacing: \vspace{0.5em} between entries
+
+INDENTATION PATTERN (CRITICAL):
+- Section headers: Flush left with underline
+- Entry titles (degree, job title, publication title): INDENTED ~1em from left margin
+- Supporting text (institution name, author list, venue): Flush left (no indent)
+- Bullet points: Flush left with standard itemize indent
+
+SKILLS/COURSEWORK SECTIONS:
+- Can use comma-separated lists or columns
+- Bold category labels if grouping (e.g., \textbf{Programming:} Python, C++)
+
+PACKAGES TO USE:
+- geometry (for margins)
+- enumitem (for customized lists)
+- titlesec (for section formatting)
+- hyperref (for clickable links)
+- fontenc, inputenc (for proper encoding)
+
+ADDITIONAL NOTES:
+- Keep it to 1-2 pages
+- Use consistent date formatting (e.g., "May 2025" or "2025")
+- Ensure all special characters are escaped (%, &, $, #, _)
