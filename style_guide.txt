@@ -1,62 +1,69 @@
-# LATEX GENERATION STYLE GUIDE
-# Goal: Academic CV (IEEE Style)
-# Font: Times New Roman
-
-[DOCUMENT SETUP]
-- Document Class: \documentclass[11pt]{article}
-- Package: \usepackage{mathptmx} % Sets font to Times New Roman
-- Package: \usepackage[margin=0.75in]{geometry}
-- Package: \usepackage{enumitem} % For list customization
-- Package: \usepackage{titlesec} % For section formatting
-- Package: \usepackage{hyperref} % For links
-- Package: \usepackage{lastpage, fancyhdr} % Optional for page numbering
-- Layout: Single column
-
-[FONT SIZING & TYPOGRAPHY]
-- Base Font: 11pt (set in documentclass)
-- Title (Name): 16pt Bold -> Use \fontsize{16}{19}\selectfont \textbf{Name}
-- Section Headers: 12pt Bold -> Use \large \textbf{SECTION NAME}
-- Body Text: 11pt (Standard)
-
-[HEADER SECTION]
-- Alignment: Centered
-- Content:
-  1. Name (16pt, Bold)
-  2. Contact Line (11pt): City, State | email | phone | linkedin_url
-- Spacing: \vspace{0.5em} after contact info.
-
-[SECTION FORMATTING]
-- Command: \titleformat{\section}
-- Style: \large\bfseries\uppercase
-- Decoration: \titlerule (Horizontal rule below text)
-- Spacing: \titlespacing*{\section}{0pt}{12pt}{6pt} (Adjust for visual breathing room)
-
-[ENTRY FORMAT]
-# Used for Education, Experience, Projects
-- Structure:
-  \noindent \textbf{Title/Role} \hfill \textbf{Date Range} \\
-  \textit{Institution/Company} \hfill \textit{Location (Optional)}
-- Details:
-  \begin{itemize}[leftmargin=*, noitemsep, topsep=0pt]
-    \item Detail 1
-    \item Detail 2
-  \end{itemize}
-- Spacing: \vspace{0.5em} between distinct entries.
-
-[ACADEMIC/IEEE CONVENTIONS]
-- Dates: Use "May 2025" or "2023--Present" (use en-dash `--` for ranges).
-- Citations: If including a publication list, use standard IEEE format (e.g., [1] J. Doe, "Title," Journal...).
-- Tense: Past tense for past roles, Present tense for current roles.
-
-[SKILLS SECTION]
-- Format: \noindent \textbf{Category Name:} Skill 1, Skill 2, Skill 3 \\
-- Grouping: Keep relevant keywords together (e.g., Software, Hardware, Languages).
-
-[REQUIRED PACKAGES LIST]
+% LATEX SKELETON - STRICTLY FOLLOW THIS STRUCTURE
+% Font: Times New Roman (Mathptmx), 11pt
+% Margins: 0.75in
+\documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage{mathptmx}
+\usepackage{mathptmx} % Times New Roman
 \usepackage[margin=0.75in]{geometry}
 \usepackage{titlesec}
 \usepackage{enumitem}
 \usepackage{hyperref}
+\usepackage{xcolor}
+
+% FORMATTING DEFINITIONS
+\pagestyle{empty} % No page numbers
+\raggedright % Prevent awkward hyphenation
+
+% Header Format: 16pt Bold Name, 12pt Contact
+\newcommand{\header}[4]{
+    \begin{center}
+        {\fontsize{16}{19}\selectfont \textbf{#1}}\\[0.5em] 
+        {\small #2 \ | \ #3 \ | \ #4}
+    \end{center}
+}
+
+% Section Format: 12pt Bold, All Caps, Rule Below
+\titleformat{\section}
+  {\large\bfseries\uppercase}{}{0em}{}[\titlerule\vspace{0.3em}]
+\titlespacing*{\section}{0pt}{12pt}{6pt}
+
+% Entry Format (Education, Experience, etc.)
+\newcommand{\entry}[4]{
+    \noindent \textbf{#1} \hfill \textbf{#2} \\
+    \textit{#3} \hfill \textit{#4}
+}
+
+% Bullet Lists
+\setlist[itemize]{leftmargin=*, noitemsep, topsep=0pt, parsep=0pt}
+
+\begin{document}
+
+% -----------------------------------------------------------
+% INSTRUCTIONS FOR AI:
+% 1. FILL IN THE SECTIONS BELOW USING {{cv_content}}
+% 2. DO NOT USE PLACEHOLDERS. USE ACTUAL DATA.
+% 3. IF DATA IS MISSING, OMIT THE LINE.
+% 4. ESCAPE SPECIAL CHARACTERS: & becomes \&, % becomes \%
+% -----------------------------------------------------------
+
+% HEADER (Name, City/State, Email, Website/LinkedIn)
+\header{Christopher Kniss}{Amherst, MA}{chris@ckniss.net}{linkedin.com/in/christopher-kniss}
+
+\section{Education}
+% Example:
+% \entry{Degree Name}{Date}{Institution}{Location}
+% \begin{itemize} \item Details... \end{itemize}
+
+\section{Work Experience}
+
+\section{Research Activity}
+
+\section{Publications}
+% Format: \textbf{Title} \\ Authors... \textit{Journal}...
+
+\section{Skills}
+
+\section{Awards \& Honors}
+
+\end{document}
