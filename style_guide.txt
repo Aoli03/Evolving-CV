@@ -1,6 +1,8 @@
-% LATEX SKELETON - STRICTLY FOLLOW THIS STRUCTURE
-% Font: Times New Roman (Mathptmx), 11pt
+% LATEX SKELETON - ACADEMIC CV FORMAT (IEEE STYLE)
+% STRICTLY FOLLOW THIS STRUCTURE AND ORDER
+% Font: Times New Roman, 11pt
 % Margins: 0.75in
+
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -11,11 +13,19 @@
 \usepackage{hyperref}
 \usepackage{xcolor}
 
+% HYPERLINK SETUP
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=black,
+    citecolor=black
+}
+
 % FORMATTING DEFINITIONS
-\pagestyle{empty} % No page numbers
+\pagestyle{empty} % No page numbers for single page, or remove for multi-page
 \raggedright % Prevent awkward hyphenation
 
-% Header Format: 16pt Bold Name, 12pt Contact
+% Header Format: 16pt Bold Name, 11pt Contact
 \newcommand{\header}[4]{
     \begin{center}
         {\fontsize{16}{19}\selectfont \textbf{#1}}\\[0.5em] 
@@ -28,10 +38,21 @@
   {\large\bfseries\uppercase}{}{0em}{}[\titlerule\vspace{0.3em}]
 \titlespacing*{\section}{0pt}{12pt}{6pt}
 
-% Entry Format (Education, Experience, etc.)
+% Entry Format (General)
+% Arg 1: Role/Title, Arg 2: Date, Arg 3: Institution, Arg 4: Location (Optional)
 \newcommand{\entry}[4]{
     \noindent \textbf{#1} \hfill \textbf{#2} \\
     \textit{#3} \hfill \textit{#4}
+}
+
+% Publication Format (Hanging indent for IEEE style)
+\newcommand{\pubentry}[1]{
+    \noindent
+    \begin{minipage}{\dimexpr\textwidth\relax}
+    \hangindent=1.5em \hangafter=1
+    #1
+    \end{minipage}
+    \vspace{0.4em}
 }
 
 % Bullet Lists
@@ -40,30 +61,46 @@
 \begin{document}
 
 % -----------------------------------------------------------
-% INSTRUCTIONS FOR AI:
-% 1. FILL IN THE SECTIONS BELOW USING {{cv_content}}
-% 2. DO NOT USE PLACEHOLDERS. USE ACTUAL DATA.
-% 3. IF DATA IS MISSING, OMIT THE LINE.
-% 4. ESCAPE SPECIAL CHARACTERS: & becomes \&, % becomes \%
+% INSTRUCTIONS FOR AI GENERATOR:
+% 1. MAP THE MARKDOWN CONTENT TO THE SECTIONS BELOW.
+% 2. RE-GROUP DATA: 
+%    - Move "Teaching Assistant" roles to \section{Teaching Experience}.
+%    - Move "NIST", "SINE Lab" and "Research Activity" items to \section{Research Experience}.
+% 3. CITATION STYLE: Use IEEE format for publications (Authors, "Title", Journal, Year).
+% 4. ESCAPE CHARACTERS: Ensure & is \&, % is \%.
 % -----------------------------------------------------------
 
-% HEADER (Name, City/State, Email, Website/LinkedIn)
+% HEADER
 \header{Christopher Kniss}{Amherst, MA}{chris@ckniss.net}{linkedin.com/in/christopher-kniss}
 
 \section{Education}
-% Example:
-% \entry{Degree Name}{Date}{Institution}{Location}
-% \begin{itemize} \item Details... \end{itemize}
-
-\section{Work Experience}
-
-\section{Research Activity}
-
-\section{Publications}
-% Format: \textbf{Title} \\ Authors... \textit{Journal}...
-
-\section{Skills}
+% Use \entry{Degree}{Date}{Institution}{Location}
+% Include Advisors and Thesis titles if available.
 
 \section{Awards \& Honors}
+% List Dean's List, Scholarships, Grants here.
+
+\section{Publications}
+% Use IEEE Format. Bold the user's name (Christopher Kniss).
+% Example: \pubentry{\textbf{C. Kniss}, A. Sharma, "Title," \textit{Journal Name}, vol. X, pp. 1-5, 2025.}
+
+\section{Conferences \& Presentations}
+% List Oral and Poster presentations here.
+
+\section{Research Experience}
+% MERGE "Work Experience" (NIST, SINE Lab) and "Research Activity" (Folding Amplifier) here.
+% Use \entry command followed by itemize.
+
+\section{Teaching Experience}
+% Extract "Teaching Assistant" roles from Work Experience and place here.
+
+\section{Professional Memberships}
+% Tau Beta Pi, IEEE, etc.
+
+\section{Skills}
+% Group by Software, Programming, Lab Equipment.
+
+\section{Relevant Coursework}
+% List Graduate and Undergraduate core courses.
 
 \end{document}
